@@ -1,0 +1,200 @@
+:root {
+  color-scheme: dark;
+
+  /* Primitive color world: deep-space glass, amethyst energy, cold starlight. */
+  --sx-void-1000: #03040a;
+  --sx-void-950: #050611;
+  --sx-void-900: #080a16;
+  --sx-void-850: #0c0e1d;
+  --sx-void-800: #111326;
+  --sx-nebula-700: #312462;
+  --sx-amethyst-300: #c9c3ff;
+  --sx-amethyst-400: #ada1ff;
+  --sx-amethyst-500: #8d72ff;
+  --sx-amethyst-600: #7555f6;
+  --sx-starlight-200: #f3f1ff;
+  --sx-starlight-300: #dfdcf7;
+  --sx-starlight-500: #a8a4c3;
+  --sx-starlight-600: #7f7b99;
+  --sx-starlight-700: #5f5c72;
+  --sx-ice-400: #83c7ff;
+  --sx-mint-400: #70d8ba;
+  --sx-amber-400: #efc677;
+  --sx-rose-400: #ef8ca9;
+
+  /* Semantic surfaces. Each step is intentionally quiet in dark mode. */
+  --sx-canvas: var(--sx-void-1000);
+  --sx-shell: rgba(5, 6, 17, 0.94);
+  --sx-surface-1: rgba(10, 11, 25, 0.78);
+  --sx-surface-2: rgba(15, 17, 34, 0.88);
+  --sx-surface-3: rgba(20, 22, 43, 0.96);
+  --sx-control: rgba(3, 4, 13, 0.68);
+  --sx-control-hover: rgba(18, 18, 39, 0.9);
+  --sx-scrim: rgba(1, 2, 8, 0.72);
+
+  --sx-text-primary: var(--sx-starlight-200);
+  --sx-text-secondary: var(--sx-starlight-300);
+  --sx-text-tertiary: var(--sx-starlight-500);
+  --sx-text-muted: var(--sx-starlight-600);
+  --sx-text-disabled: var(--sx-starlight-700);
+
+  --sx-brand: var(--sx-amethyst-500);
+  --sx-brand-bright: var(--sx-amethyst-400);
+  --sx-brand-soft: rgba(141, 114, 255, 0.14);
+  --sx-brand-faint: rgba(141, 114, 255, 0.07);
+  --sx-focus: var(--sx-ice-400);
+  --sx-success: var(--sx-mint-400);
+  --sx-warning: var(--sx-amber-400);
+  --sx-danger: var(--sx-rose-400);
+  --sx-info: var(--sx-ice-400);
+
+  --sx-line-soft: rgba(190, 183, 255, 0.065);
+  --sx-line: rgba(190, 183, 255, 0.11);
+  --sx-line-strong: rgba(190, 183, 255, 0.2);
+  --sx-line-focus: rgba(131, 199, 255, 0.76);
+  --sx-line-brand: rgba(173, 161, 255, 0.38);
+
+  /* Type: Avenir has the precise, engineered geometry of the product world. */
+  --sx-font-sans: "Avenir Next", "SF Pro Display", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --sx-font-mono: "SFMono-Regular", "Cascadia Code", "Roboto Mono", monospace;
+  --sx-type-2xs: 10px;
+  --sx-type-xs: 11px;
+  --sx-type-sm: 12px;
+  --sx-type-md: 14px;
+  --sx-type-lg: 16px;
+  --sx-type-xl: 18px;
+  --sx-type-2xl: 22px;
+  --sx-type-3xl: 28px;
+
+  /* 4px base grid. */
+  --sx-space-1: 4px;
+  --sx-space-2: 8px;
+  --sx-space-3: 12px;
+  --sx-space-4: 16px;
+  --sx-space-5: 20px;
+  --sx-space-6: 24px;
+  --sx-space-8: 32px;
+  --sx-space-10: 40px;
+  --sx-space-12: 48px;
+
+  --sx-radius-xs: 4px;
+  --sx-radius-sm: 8px;
+  --sx-radius-md: 12px;
+  --sx-radius-lg: 16px;
+  --sx-radius-xl: 20px;
+  --sx-radius-round: 999px;
+
+  --sx-shadow-panel: 0 0 0 1px var(--sx-line), 0 18px 60px rgba(0, 0, 0, 0.22);
+  --sx-shadow-float: 0 0 0 1px var(--sx-line-strong), 0 24px 80px rgba(0, 0, 0, 0.48);
+  --sx-shadow-brand: 0 0 0 1px rgba(181, 169, 255, 0.24), 0 10px 30px rgba(89, 61, 201, 0.22);
+
+  --sx-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --sx-ease-move: cubic-bezier(0.77, 0, 0.175, 1);
+  --sx-duration-fast: 130ms;
+  --sx-duration-ui: 190ms;
+  --sx-duration-surface: 260ms;
+
+  --sx-sidebar-width: 248px;
+  --sx-sidebar-collapsed: 72px;
+  --sx-topbar-height: 64px;
+  --sx-content-max: 1680px;
+  --sx-z-pointer: 18;
+  --sx-z-shell: 20;
+  --sx-z-overlay: 70;
+  --sx-z-modal: 80;
+  --sx-z-toast: 100;
+}
+
+.workspace-loading {
+  min-height: 50vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 14px;
+  color: var(--text-secondary, #b9b5d3);
+}
+
+.workspace-loading__sigil {
+  color: var(--accent-primary, #a68bff);
+  font-size: 36px;
+  filter: drop-shadow(0 0 14px rgba(132, 98, 255, 0.75));
+  animation: workspace-sigil 1.4s ease-in-out infinite;
+}
+
+.workspace-loading p {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+}
+
+@keyframes workspace-sigil {
+  0%,
+  100% { transform: rotate(0deg) scale(0.92); opacity: 0.62; }
+  50% { transform: rotate(90deg) scale(1.08); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workspace-loading__sigil { animation: none; }
+}
+
+:root[data-sx-reduced-motion="true"] *,
+:root[data-sx-reduced-motion="true"] *::before,
+:root[data-sx-reduced-motion="true"] *::after {
+  scroll-behavior: auto !important;
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+html {
+  background: var(--sx-canvas);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--sx-canvas);
+  color: var(--sx-text-primary);
+  font-family: var(--sx-font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: rgba(117, 85, 246, 0.62);
+}
+
+:focus-visible {
+  outline: 2px solid var(--sx-focus);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

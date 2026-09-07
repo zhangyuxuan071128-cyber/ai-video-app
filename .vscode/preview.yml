@@ -1,0 +1,14 @@
+apps:
+  - port: 3000
+    run: corepack enable && pnpm install --frozen-lockfile && pnpm cloudstudio
+    root: ./
+    name: 星核影枢 · 会员端
+    autoOpen: true
+    autoPreview: true
+    mainPort: true
+  - port: 3001
+    run: node scripts/wait-for-service.mjs http://127.0.0.1:3001/control/health 900000
+    root: ./
+    name: 星核影枢 · 超级管理端（请设为仅自己可见）
+    autoOpen: true
+    autoPreview: false
